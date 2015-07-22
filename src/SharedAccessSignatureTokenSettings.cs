@@ -9,16 +9,6 @@ namespace SXN.Azure
 	[DataContract]
 	public sealed class SharedAccessSignatureTokenSettings
 	{
-		#region Fields
-
-		[DataMember(Name = @"KeyName")]
-		private readonly String keyName;
-
-		[DataMember(Name = @"SharedAccessKey")]
-		private readonly String sharedAccessKey;
-
-		#endregion
-
 		#region Constructors
 
 		/// <summary>
@@ -28,9 +18,19 @@ namespace SXN.Azure
 		/// <param name="sharedAccessKey">The shared access key.</param>
 		public SharedAccessSignatureTokenSettings(String keyName, String sharedAccessKey)
 		{
-			this.keyName = keyName.CheckArgument(@"keyName");
+			if (keyName == null)
+			{
+				throw new ArgumentNullException(nameof(keyName));
+			}
 
-			this.sharedAccessKey = sharedAccessKey.CheckArgument(@"sharedAccessKey");
+			if (sharedAccessKey == null)
+			{
+				throw new ArgumentNullException(nameof(sharedAccessKey));
+			}
+
+			KeyName = keyName;
+
+			SharedAccessKey = sharedAccessKey;
 		}
 
 		#endregion
@@ -40,23 +40,19 @@ namespace SXN.Azure
 		/// <summary>
 		/// The key name.
 		/// </summary>
+		[DataMember]
 		public String KeyName
 		{
-			get
-			{
-				return keyName;
-			}
+			get;
 		}
 
 		/// <summary>
 		/// The shared access key.
 		/// </summary>
+		[DataMember]
 		public String SharedAccessKey
 		{
-			get
-			{
-				return sharedAccessKey;
-			}
+			get;
 		}
 
 		#endregion

@@ -10,12 +10,6 @@ namespace SXN.Azure.Extensions
 	/// </summary>
 	public sealed class CloudBlobMoveBlobsResult : CloudBlobCopyBlobsResult
 	{
-		#region Fields
-
-		private readonly IReadOnlyList<ICloudBlob> notDeletedBlobs;
-
-		#endregion
-
 		#region Constructors
 
 		/// <summary>
@@ -27,7 +21,7 @@ namespace SXN.Azure.Extensions
 		internal CloudBlobMoveBlobsResult(IList<ICloudBlob> newBlobs, IList<ICloudBlob> notCopiedBlobs, IList<ICloudBlob> notDeletedBlobs)
 			: base(newBlobs, notCopiedBlobs)
 		{
-			this.notDeletedBlobs = new ReadOnlyCollection<ICloudBlob>(notDeletedBlobs);
+			NotDeletedBlobs = new ReadOnlyCollection<ICloudBlob>(notDeletedBlobs);
 		}
 
 		#endregion
@@ -39,10 +33,7 @@ namespace SXN.Azure.Extensions
 		/// </summary>
 		public IReadOnlyList<ICloudBlob> NotDeletedBlobs
 		{
-			get
-			{
-				return notDeletedBlobs;
-			}
+			get;
 		}
 
 		#endregion
@@ -58,7 +49,7 @@ namespace SXN.Azure.Extensions
 		{
 			if (results == null)
 			{
-				throw new ArgumentNullException(@"results");
+				throw new ArgumentNullException(nameof(results));
 			}
 
 			var newBlobs = new List<ICloudBlob>();

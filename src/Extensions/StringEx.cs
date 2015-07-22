@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
@@ -26,12 +25,16 @@ namespace SXN.Azure.Extensions
 		/// <returns>A DNS valid name.</returns>
 		/// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
 		/// <exception cref="ArgumentException"><paramref name="value"/> contains less than 3 valid characters.</exception>
-		[SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static String ToValidDnsName(this String value)
 		{
+			if (value == null)
+			{
+				throw new ArgumentNullException(nameof(value));
+			}
+
 			// Lowercase id
-			var result = value.CheckArgument(@"value").ToLowerInvariant();
+			var result = value.ToLowerInvariant();
 
 			// Remove all invalid chars
 			result = Regex.Replace(result, @"[^0-9a-z-]+", String.Empty);
@@ -50,7 +53,7 @@ namespace SXN.Azure.Extensions
 
 			if (value.Length < 4)
 			{
-				throw new ArgumentException("length must be greater than 3 valid characters long", "value");
+				throw new ArgumentException("length must be greater than 3 valid characters long", nameof(value));
 			}
 
 			return result;

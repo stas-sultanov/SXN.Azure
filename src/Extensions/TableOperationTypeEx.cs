@@ -47,7 +47,7 @@ namespace SXN.Azure.Extensions
 				}
 				default:
 				{
-					throw new ArgumentOutOfRangeException(@"operationType", operationType, @"Is not supported.");
+					throw new ArgumentOutOfRangeException(nameof(operationType), operationType, @"Is not supported.");
 				}
 			}
 		}

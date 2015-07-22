@@ -48,10 +48,19 @@ namespace SXN.Azure.TimeDataStorage
 		protected TimeDataStorageBase(TimeDataStorageSettingsBase settings, ITimeDataEntityProvider<T> provider)
 		{
 			// Check argument
-			settings.CheckArgument(@"settings");
+			if (settings == null)
+			{
+				throw new ArgumentNullException(nameof(settings));
+			}
+
+			// Check argument
+			if (provider == null)
+			{
+				throw new ArgumentNullException(nameof(provider));
+			}
 
 			// Check and set
-			this.provider = provider.CheckArgument(@"provider");
+			this.provider = provider;
 
 			// Initialize row keys formats dictionary
 			rowKeyFormats = new ReadOnlyDictionary<TimeUnit, String>(settings.RowKeyFormats);

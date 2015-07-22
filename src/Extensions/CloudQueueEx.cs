@@ -35,7 +35,10 @@ namespace SXN.Azure.Extensions
 		public static async Task<IList<CloudQueueMessage>> GetAllMessagesAsync(this CloudQueue cloudQueue, CancellationToken cancellationToken)
 		{
 			// check argument
-			cloudQueue.CheckArgument(@"cloudQueue");
+			if (cloudQueue == null)
+			{
+				throw new ArgumentNullException(nameof(cloudQueue));
+			}
 
 			var result = new List<CloudQueueMessage>();
 
@@ -72,7 +75,10 @@ namespace SXN.Azure.Extensions
 		public static async Task<IList<CloudQueueMessage>> GetAllMessagesAsync(this CloudQueue cloudQueue, TimeSpan? visibilityTimeout, CancellationToken cancellationToken)
 		{
 			// check argument
-			cloudQueue.CheckArgument(@"cloudQueue");
+			if (cloudQueue == null)
+			{
+				throw new ArgumentNullException(nameof(cloudQueue));
+			}
 
 			var result = new List<CloudQueueMessage>();
 

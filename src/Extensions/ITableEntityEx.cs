@@ -30,11 +30,11 @@ namespace SXN.Azure.Extensions
 			{
 				case EdmType.String:
 				{
-					return 4 + (entityProperty.StringValue == null ? 0 : entityProperty.StringValue.Length * 2);
+					return 4 + (entityProperty.StringValue?.Length * 2 ?? 0);
 				}
 				case EdmType.Binary:
 				{
-					return 4 + (entityProperty.BinaryValue == null ? 0 : entityProperty.BinaryValue.Length);
+					return 4 + (entityProperty.BinaryValue?.Length ?? 0);
 				}
 				case EdmType.Boolean:
 				{
@@ -75,9 +75,9 @@ namespace SXN.Azure.Extensions
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Int32 GetSize(this ITableEntity tableEntity)
 		{
-			var partitionKeyLength = tableEntity.PartitionKey == null ? 0 : tableEntity.PartitionKey.Length * 2;
+			var partitionKeyLength = tableEntity.PartitionKey?.Length * 2 ?? 0;
 
-			var rowKeyLength = tableEntity.RowKey == null ? 0 : tableEntity.RowKey.Length * 2;
+			var rowKeyLength = tableEntity.RowKey?.Length * 2 ?? 0;
 
 			return 4 + partitionKeyLength + rowKeyLength + tableEntity.WriteEntity(null).Sum(pair => 8 + pair.Key.Length * 2 + pair.Value.GetSize());
 		}

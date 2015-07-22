@@ -56,7 +56,7 @@ namespace SXN.Azure.Extensions
 				continuationToken = segment.ContinuationToken;
 
 				// Concat segment to result
-				result = result == null ? segment : result.Concat(segment);
+				result = result?.Concat(segment) ?? segment;
 			}
 			while (continuationToken != null && !cancellationToken.IsCancellationRequested);
 
@@ -85,7 +85,10 @@ namespace SXN.Azure.Extensions
 		public static Task<TableResult> ExecuteAsync(this CloudTable table, TableOperationType operation, ITableEntity entity, CancellationToken cancellationToken)
 		{
 			// Check table argument
-			table.CheckArgument(@"table");
+			if (table == null)
+			{
+				throw new ArgumentNullException(nameof(table));
+			}
 
 			// Get create operation delegate
 			var createOperation = operation.GetCreateOperationDelegate();
@@ -113,7 +116,10 @@ namespace SXN.Azure.Extensions
 		public static async Task<IEnumerable<TableResult>> ExecuteBatchAsync(this CloudTable table, TableOperationType batchOperationType, IEnumerable<ITableEntity> entities, CancellationToken cancellationToken)
 		{
 			// Check table argument
-			table.CheckArgument(@"table");
+			if (table == null)
+			{
+				throw new ArgumentNullException(nameof(table));
+			}
 
 			// Get create operation delegate
 			var createOperation = batchOperationType.GetCreateOperationDelegate();
@@ -233,7 +239,10 @@ namespace SXN.Azure.Extensions
 			where TEntity : ITableEntity, new()
 		{
 			// Check table argument
-			table.CheckArgument(@"table");
+			if (table == null)
+			{
+				throw new ArgumentNullException(nameof(table));
+			}
 
 			// Initiate query operations
 			var queriesTasks = queries.Select(query => table.ExecuteQueryInternalAsync(query, cancellationToken)).ToArray();
@@ -261,11 +270,17 @@ namespace SXN.Azure.Extensions
 		public static Task<IEnumerable<TEntity>> ExecuteQueryAsync<TEntity>(this CloudTable table, TableQuery<TEntity> query, CancellationToken cancellationToken)
 			where TEntity : ITableEntity, new()
 		{
-			// Check table argument
-			table.CheckArgument(@"table");
+			// Check argument
+			if (table == null)
+			{
+				throw new ArgumentNullException(nameof(table));
+			}
 
-			// Check query argument
-			query.CheckArgument(@"query");
+			// Check argument
+			if (query == null)
+			{
+				throw new ArgumentNullException(nameof(query));
+			}
 
 			// Execute query
 			return table.ExecuteQueryInternalAsync(query, cancellationToken);

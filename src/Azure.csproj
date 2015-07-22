@@ -23,9 +23,9 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\bin\</OutputPath>
     <DefineConstants>TRACE;CODE_ANALYSIS;</DefineConstants>
-    <DocumentationFile>bin\Release\SXN.Azure.xml</DocumentationFile>
+    <DocumentationFile>..\bin\SXN.Azure.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>

@@ -2,7 +2,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.ServiceModel.Channels;
 using Microsoft.ServiceBus;
 using SXN.Azure.Extensions;
 
@@ -14,16 +13,6 @@ namespace SXN.Azure
 	[DataContract]
 	public sealed class RelaySettings
 	{
-		#region Fields
-
-		[DataMember(Name = @"serviceNamespace")]
-		private String serviceNamespace;
-
-		[DataMember(Name = @"Token")]
-		private SharedAccessSignatureTokenSettings token;
-
-		#endregion
-
 		#region Constructors
 
 		/// <summary>
@@ -33,9 +22,9 @@ namespace SXN.Azure
 		/// <param name="token">The configuration of the token.</param>
 		public RelaySettings(String serviceNamespace, SharedAccessSignatureTokenSettings token)
 		{
-			this.serviceNamespace = serviceNamespace;
+			ServiceNamespace = serviceNamespace;
 
-			this.token = token;
+			Token = token;
 		}
 
 		#endregion
@@ -45,23 +34,19 @@ namespace SXN.Azure
 		/// <summary>
 		/// The root of the name of the service namespace used by the application.
 		/// </summary>
+		[DataMember]
 		public String ServiceNamespace
 		{
-			get
-			{
-				return serviceNamespace;
-			}
+			get;
 		}
 
 		/// <summary>
 		/// The configuration of the token.
 		/// </summary>
+		[DataMember]
 		public SharedAccessSignatureTokenSettings Token
 		{
-			get
-			{
-				return token;
-			}
+			get;
 		}
 
 		#endregion
@@ -81,15 +66,24 @@ namespace SXN.Azure
 		[SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]
 		public void ConfigureServiceHost(ServiceHost host, Type contractType, String servicePath, Int32 incomingPort)
 		{
-			host.CheckArgument(@"host");
+			if (host == null)
+			{
+				throw new ArgumentNullException(nameof(host));
+			}
 
-			servicePath.CheckArgument(@"servicePath");
+			if (contractType == null)
+			{
+				throw new ArgumentNullException(nameof(contractType));
+			}
 
-			contractType.CheckArgument(@"contractType");
+			if (servicePath == null)
+			{
+				throw new ArgumentNullException(nameof(servicePath));
+			}
 
 			if (host.State != CommunicationState.Created)
 			{
-				throw new ArgumentException("is not in Created state", "host");
+				throw new ArgumentException("is not in Created state", nameof(host));
 			}
 
 			// Construct an Azure Service Bus address
@@ -99,7 +93,7 @@ namespace SXN.Azure
 			var relayServiceEndpoint = host.AddServiceEndpoint(contractType, new NetTcpRelayBinding(), address);
 
 			// Create a shared secret token provider
-			var relayTokenProvider = TokenProvider.CreateSharedAccessSignatureTokenProvider(token.KeyName, token.SharedAccessKey);
+			var relayTokenProvider = TokenProvider.CreateSharedAccessSignatureTokenProvider(Token.KeyName, Token.SharedAccessKey);
 
 			// Initialize a new instance of the TransportClientEndpointBehavior class
 			var relayEndpointBehavior = new TransportClientEndpointBehavior(relayTokenProvider);

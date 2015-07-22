@@ -51,7 +51,8 @@ namespace SXN.Azure.Extensions
 		public Boolean CopyIsCompleted
 		{
 			get;
-			set;
+
+			private set;
 		}
 
 		/// <summary>
@@ -70,7 +71,8 @@ namespace SXN.Azure.Extensions
 		public Boolean DeleteIsCompleted
 		{
 			get;
-			set;
+
+			private set;
 		}
 
 		/// <summary>
@@ -79,7 +81,8 @@ namespace SXN.Azure.Extensions
 		public Boolean IsCompleted
 		{
 			get;
-			set;
+
+			private set;
 		}
 
 		/// <summary>
@@ -88,8 +91,6 @@ namespace SXN.Azure.Extensions
 		public ICloudBlob SourceBlob
 		{
 			get;
-
-			private set;
 		}
 
 		/// <summary>
@@ -98,8 +99,6 @@ namespace SXN.Azure.Extensions
 		public ICloudBlob TargetBlob
 		{
 			get;
-
-			private set;
 		}
 
 		#endregion

@@ -10,14 +10,6 @@ namespace SXN.Azure.Extensions
 	/// </summary>
 	public class CloudBlobCopyBlobsResult
 	{
-		#region Fields
-
-		private readonly IReadOnlyList<ICloudBlob> newBlobs;
-
-		private readonly IReadOnlyList<ICloudBlob> notCopiedBlobs;
-
-		#endregion
-
 		#region Constructors
 
 		/// <summary>
@@ -27,9 +19,9 @@ namespace SXN.Azure.Extensions
 		/// <param name="notCopiedBlobs">A list of not copied source blobs.</param>
 		internal CloudBlobCopyBlobsResult(IList<ICloudBlob> newBlobs, IList<ICloudBlob> notCopiedBlobs)
 		{
-			this.newBlobs = new ReadOnlyCollection<ICloudBlob>(newBlobs);
+			NewBlobs = new ReadOnlyCollection<ICloudBlob>(newBlobs);
 
-			this.notCopiedBlobs = new ReadOnlyCollection<ICloudBlob>(notCopiedBlobs);
+			NotCopiedBlobs = new ReadOnlyCollection<ICloudBlob>(notCopiedBlobs);
 		}
 
 		#endregion
@@ -41,10 +33,7 @@ namespace SXN.Azure.Extensions
 		/// </summary>
 		public IReadOnlyList<ICloudBlob> NewBlobs
 		{
-			get
-			{
-				return newBlobs;
-			}
+			get;
 		}
 
 		/// <summary>
@@ -52,10 +41,7 @@ namespace SXN.Azure.Extensions
 		/// </summary>
 		public IReadOnlyList<ICloudBlob> NotCopiedBlobs
 		{
-			get
-			{
-				return notCopiedBlobs;
-			}
+			get;
 		}
 
 		#endregion
@@ -71,7 +57,7 @@ namespace SXN.Azure.Extensions
 		{
 			if (results == null)
 			{
-				throw new ArgumentNullException(@"results");
+				throw new ArgumentNullException(nameof(results));
 			}
 
 			var newBlobs = new List<ICloudBlob>();

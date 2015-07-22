@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using Microsoft.WindowsAzure.Storage.Table;
 
 namespace SXN.Azure.Extensions
@@ -83,21 +82,28 @@ namespace SXN.Azure.Extensions
 		/// <param name="tableEntity">A target table entity.</param>
 		/// <param name="key">The object to use as the key of the element to add.</param>
 		/// <param name="value">The object to use as the value of the element to add.</param>
-		[SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]
-		[SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "2")]
 		public static void AddProperty(this DynamicTableEntity tableEntity, String key, Object value)
 		{
-			tableEntity.CheckArgument(@"entity");
+			if (tableEntity == null)
+			{
+				throw new ArgumentNullException(nameof(tableEntity));
+			}
 
-			key.CheckArgument(@"key");
+			if (key == null)
+			{
+				throw new ArgumentNullException(nameof(key));
+			}
 
-			value.CheckArgument(@"value");
+			if (value == null)
+			{
+				throw new ArgumentNullException(nameof(value));
+			}
 
 			Func<Object, EntityProperty> entityCtor;
 
 			if (!entityCtors.TryGetValue(value.GetType(), out entityCtor))
 			{
-				throw new ArgumentException("the type of value is not supported", @"value");
+				throw new ArgumentException("the type of value is not supported", nameof(value));
 			}
 
 			tableEntity.Properties.Add(key, entityCtor(value));

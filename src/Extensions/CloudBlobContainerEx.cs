@@ -195,7 +195,10 @@ namespace SXN.Azure.Extensions
 		public static async Task<IEnumerable<ICloudBlob>> ListCloudBlobsAsync(this CloudBlobContainer container, String blobNamePrefix, CancellationToken cancellationToken)
 		{
 			// Check argument
-			container.CheckArgument(@"container");
+			if (container == null)
+			{
+				throw new ArgumentNullException(nameof(container));
+			}
 
 			var result = (IEnumerable<IListBlobItem>) null;
 
@@ -207,7 +210,7 @@ namespace SXN.Azure.Extensions
 				var resultSegmented = await container.ListBlobsSegmentedAsync(blobNamePrefix, true, BlobListingDetails.None, null, continuationToken, null, null, cancellationToken);
 
 				// Add to result
-				result = result == null ? resultSegmented.Results : result.Concat(resultSegmented.Results);
+				result = result?.Concat(resultSegmented.Results) ?? resultSegmented.Results;
 
 				// Set continuation token
 				continuationToken = resultSegmented.ContinuationToken;
@@ -253,10 +256,16 @@ namespace SXN.Azure.Extensions
 		public static async Task<IEnumerable<ICloudBlob>> ListCloudBlobsAsync(this CloudBlobContainer container, String blobNamePrefix, String blobNamePattern, CancellationToken cancellationToken)
 		{
 			// Check argument
-			container.CheckArgument(@"container");
+			if (container == null)
+			{
+				throw new ArgumentNullException(nameof(container));
+			}
 
 			// Check argument
-			blobNamePattern.CheckArgument(@"blobNamePattern");
+			if (blobNamePattern == null)
+			{
+				throw new ArgumentNullException(nameof(blobNamePattern));
+			}
 
 			// Compile regex
 			var regex = new Regex(blobNamePattern, RegexOptions.Compiled | RegexOptions.Singleline);

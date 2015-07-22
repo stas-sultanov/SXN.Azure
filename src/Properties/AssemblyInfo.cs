@@ -1,26 +1,60 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+// The name of the company.
+
+[assembly: AssemblyCompany("Stas Sultanov")]
+
+// The configuration of the assembly.
+
+#if DEBUG
+
+[assembly: AssemblyConfiguration("Debug")]
+
+#else
+
+[assembly: AssemblyConfiguration("Retail")]
+
+#endif
+
+// The copyright of the assembly.
+
+[assembly: AssemblyCopyright("Copyright © 2015 Stas Sultanov")]
 
 // The culture of the assembly.
 
-[assembly: AssemblyCulture(@"")]
+[assembly: AssemblyCulture("")]
 
 // The description of the assembly.
 
-[assembly: AssemblyDescription(@"Contains types that extends functionality of Microsoft Azure.")]
+[assembly: AssemblyDescription("A collection of types that works with Microsoft Azure.")]
 
-// Defines a product name custom attribute for an assembly manifest.
+// The product name information.
 
-[assembly: AssemblyProduct(@"Azure Extensions")]
+[assembly: AssemblyProduct("Azure Extensions")]
 
 // The title of the assembly.
 
-[assembly: AssemblyTitle(@"SXN.Azure")]
+[assembly: AssemblyTitle("SXN.Azure")]
 
-#if TEST
+// The trademark of the assembly.
 
-// The test assembly.
+[assembly: AssemblyTrademark("")]
 
-[assembly: InternalsVisibleTo(@"SXN.Azure.Tests, PublicKey=00240000048000009400000006020000002400005253413100040000010001004fa8962359b602683d3b7db4a0afcc8786caa860dd02689e2efa2671eebcc763401164315039827a67662e56a2defa4c7f612a9454e4a3e3c9823054155b22b1983f85a52652cd4c6497349fb461baaa35cdd5bf62df0a41e7b3ffbffe6551432805ca976b795e5134152680162c528db50b694b66b31a9cc2ca6f3cdad0f79a")]
+// The version number of the assembly.
+// Is managed by the build process.
+
+[assembly: AssemblyVersion("255.255.255.255")]
+
+// Indicate that the assembly is not visible to COM
+
+[assembly: ComVisible(false)]
+
+#if DEBUG
+
+// The tests assembly.
+
+[assembly: InternalsVisibleTo("SXN.Azure.Tests")]
 
 #endif

@@ -35,7 +35,10 @@ namespace SXN.Azure.TimeDataStorage
 			: base(settings, provider)
 		{
 			// Check argument
-			settings.CheckArgument(@"settings");
+			if (settings == null)
+			{
+				throw new ArgumentNullException(nameof(settings));
+			}
 
 			// Get cloud storage account
 			var cloudStorageAccount = CloudStorageAccount.Parse(settings.StorageCredentials);
@@ -95,7 +98,7 @@ namespace SXN.Azure.TimeDataStorage
 
 			if (!tables.TryGetValue(timeUnit, out table))
 			{
-				throw new ArgumentException(@"There is no table for specified Time Unit.", @"timeUnit");
+				throw new ArgumentException(@"There is no table for specified Time Unit.", nameof(timeUnit));
 			}
 
 			return table;

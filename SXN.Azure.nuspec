@@ -1,0 +1,25 @@
+﻿<?xml version = "1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+	<metadata>
+		<id>SXN.Azure</id>
+		<title>SXN.Azure</title>
+		<version>255.255.255.255</version>
+		<authors>Stas Sultanov</authors>
+		<description>A collection of types that works with Microsoft Azure.</description>
+		<copyright>Copyright © 2015 Stas Sultanov.</copyright>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+		<tags>Azure, Extensions</tags>
+		<dependencies>
+			<dependency id="SXN.Core" />
+			<dependency id="WindowsAzure.ServiceBus" />
+			<dependency id="WindowsAzure.Storage" />
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="bin\SXN.Azure.dll" target="lib\net46" />
+		<file src="bin\SXN.Azure.xml" target="lib\net46" />
+		<file src="bin\SXN.Azure.pdb" target="lib\net46" />
+		<file src="src\**\*.cs" target="src" />
+	</files>
+</package>

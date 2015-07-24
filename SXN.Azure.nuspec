@@ -12,7 +12,6 @@
 		<tags>Azure, Extensions</tags>
 		<dependencies>
 			<dependency id="SXN.Core" />
-			<dependency id="WindowsAzure.ServiceBus" />
 			<dependency id="WindowsAzure.Storage" />
 		</dependencies>
 	</metadata>

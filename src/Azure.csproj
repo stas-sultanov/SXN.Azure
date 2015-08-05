@@ -47,14 +47,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="TimeDataStorage\GlobalTimeDataStorage.cs" />
-    <Compile Include="TimeDataStorage\TimeDataStorage.cs" />
-    <Compile Include="TimeDataStorage\GlobalTimeDataStorageSettings.cs" />
-    <Compile Include="TimeDataStorage\TimeDataStorageBase.cs" />
-    <Compile Include="TimeDataStorage\TimeDataStorageSettingsBase.cs" />
-    <Compile Include="TimeDataStorage\TimeDataStorageSettings.cs" />
     <Compile Include="AzureRegion.cs" />
-    <Compile Include="TimeDataStorage\ITimeDataEntityProvider.cs" />
     <Compile Include="Extensions\CloudBlobContainerEx.cs" />
     <Compile Include="Extensions\CloudBlobMoveBlobsResult.cs" />
     <Compile Include="Extensions\CloudQueueEx.cs" />
@@ -65,7 +58,6 @@
     <Compile Include="Extensions\OperationHandle.cs" />
     <Compile Include="Extensions\StringEx.cs" />
     <Compile Include="Extensions\TableOperationTypeEx.cs" />
-    <Compile Include="IDataTableEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StorageQueueMessage.cs" />
     <Compile Include="SharedAccessSignatureTokenSettings.cs" />
@@ -75,6 +67,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
       <Private>True</Private>
@@ -87,21 +83,12 @@
       <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.3.1.0\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.WindowsAzure.Storage, Version=4.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindowsAzure.Storage.4.3.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.5.0.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SXN.Core, Version=4.4.728.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SXN.Core.4.4.0728.1\lib\net46\SXN.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

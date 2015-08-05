@@ -17,12 +17,6 @@ namespace SXN.Azure.Extensions
 		private static readonly IReadOnlyDictionary<Type, Func<Object, EntityProperty>> entityCtors = new Dictionary<Type, Func<Object, EntityProperty>>
 		{
 			{
-				typeof(Value128), o => new EntityProperty((Guid?) (Value128) o)
-			},
-			{
-				typeof(Value128?), o => new EntityProperty((Guid?) (Value128) o)
-			},
-			{
 				typeof(Guid), o => new EntityProperty((Guid?) o)
 			},
 			{

@@ -18,10 +18,6 @@ namespace SXN.Azure.Extensions
 		{
 			var entity = new DynamicTableEntity("TestPartition", "TestRow");
 
-			entity.AddProperty("Value128", (Value128) Guid.NewGuid());
-
-			entity.AddProperty("Value128?", (Value128?) Guid.NewGuid());
-
 			entity.AddProperty("Guid", Guid.NewGuid());
 
 			entity.AddProperty("Guid?", (Guid?) Guid.NewGuid());

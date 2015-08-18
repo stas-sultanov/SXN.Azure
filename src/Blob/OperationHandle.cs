@@ -4,10 +4,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.Blob;
 
-namespace SXN.Azure.Extensions
+namespace Microsoft.WindowsAzure.Storage.Blob
 {
 	/// <summary>
 	/// Represents an information about the move blob operation.

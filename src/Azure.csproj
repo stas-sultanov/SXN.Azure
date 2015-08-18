@@ -7,7 +7,7 @@
     <ProjectGuid>{DA3E7E12-E7E3-4C13-8756-D6184F0389B0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SXN.Azure</RootNamespace>
+    <RootNamespace>Microsoft.WindowsAzure.Storage</RootNamespace>
     <AssemblyName>SXN.Azure</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -47,17 +47,17 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AzureRegion.cs" />
-    <Compile Include="Extensions\CloudBlobContainerEx.cs" />
-    <Compile Include="Extensions\CloudBlobMoveBlobsResult.cs" />
-    <Compile Include="Extensions\CloudQueueEx.cs" />
-    <Compile Include="Extensions\ITableEntityEx.cs" />
-    <Compile Include="Extensions\CloudTableEx.cs" />
-    <Compile Include="Extensions\DynamicTableEntityEx.cs" />
-    <Compile Include="Extensions\CloudBlobCopyBlobsResult.cs" />
-    <Compile Include="Extensions\OperationHandle.cs" />
-    <Compile Include="Extensions\StringEx.cs" />
-    <Compile Include="Extensions\TableOperationTypeEx.cs" />
+    <Compile Include="Blob\CloudBlobClient.cs" />
+    <Compile Include="Blob\CloudBlobContainerEx.cs" />
+    <Compile Include="Blob\CloudBlobMoveBlobsResult.cs" />
+    <Compile Include="Queue\CloudQueueEx.cs" />
+    <Compile Include="Table\ITableEntityEx.cs" />
+    <Compile Include="Table\CloudTableEx.cs" />
+    <Compile Include="Table\DynamicTableEntityEx.cs" />
+    <Compile Include="Blob\CloudBlobCopyBlobsResult.cs" />
+    <Compile Include="Blob\OperationHandle.cs" />
+    <Compile Include="StringEx.cs" />
+    <Compile Include="Table\TableOperationTypeEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StorageQueueMessage.cs" />
     <Compile Include="SharedAccessSignatureTokenSettings.cs" />
@@ -104,5 +104,6 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

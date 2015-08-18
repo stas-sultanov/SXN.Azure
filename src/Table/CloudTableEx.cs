@@ -4,9 +4,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.WindowsAzure.Storage.Table;
 
-namespace SXN.Azure.Extensions
+namespace Microsoft.WindowsAzure.Storage.Table
 {
 	/// <summary>
 	/// Provides a set of extension methods for the <see cref="CloudTable"/> class.

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace SXN.Azure
+namespace Microsoft.WindowsAzure.Storage
 {
 	/// <summary>
 	/// Represents the Azure Service Bus Token.

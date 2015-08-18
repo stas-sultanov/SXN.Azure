@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Microsoft.WindowsAzure.Storage.Blob;
 
-namespace SXN.Azure.Extensions
+namespace Microsoft.WindowsAzure.Storage.Blob
 {
 	/// <summary>
 	/// Provides an information about performed bulk move operation.

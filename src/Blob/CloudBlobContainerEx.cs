@@ -6,9 +6,9 @@ using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.WindowsAzure.Storage.Blob;
+using Microsoft.WindowsAzure.Storage.Table;
 
-namespace SXN.Azure.Extensions
+namespace Microsoft.WindowsAzure.Storage.Blob
 {
 	/// <summary>
 	/// Provides a set of extension methods for the <see cref="CloudBlobContainer"/> class.

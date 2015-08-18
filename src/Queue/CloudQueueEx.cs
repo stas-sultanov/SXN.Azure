@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.WindowsAzure.Storage.Queue;
-using Microsoft.WindowsAzure.Storage.Table;
 
-namespace SXN.Azure.Extensions
+namespace Microsoft.WindowsAzure.Storage.Queue
 {
 	/// <summary>
-	/// Provides a set of extension methods for the <see cref="CloudTable"/> class.
+	/// Provides a set of extension methods for the <see cref="CloudQueue"/> class.
 	/// </summary>
 	public static class CloudQueueEx
 	{

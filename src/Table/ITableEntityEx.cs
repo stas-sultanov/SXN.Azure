@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using Microsoft.WindowsAzure.Storage.Table;
 
-namespace SXN.Azure.Extensions
+namespace Microsoft.WindowsAzure.Storage.Table
 {
 	/// <summary>
 	/// Provides a set of extension methods for the <see cref="ITableEntity"/> interface.

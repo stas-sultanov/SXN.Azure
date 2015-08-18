@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
-namespace SXN.Azure.Extensions
+namespace Microsoft.WindowsAzure.Storage
 {
 	/// <summary>
 	/// Provides a set of extension methods for the <see cref="string"/> class.

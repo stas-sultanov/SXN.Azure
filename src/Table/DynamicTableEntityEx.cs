@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.WindowsAzure.Storage.Table;
 
-namespace SXN.Azure.Extensions
+namespace Microsoft.WindowsAzure.Storage.Table
 {
 	/// <summary>
 	/// Provides a set of extension methods for <see cref="DynamicTableEntity"/> class.

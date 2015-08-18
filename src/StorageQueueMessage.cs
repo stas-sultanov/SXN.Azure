@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-namespace SXN.Azure
+namespace Microsoft.WindowsAzure.Storage
 {
 	/// <summary>
 	/// Represents a message sent by Azure Scheduler service.

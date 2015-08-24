@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 namespace Microsoft.WindowsAzure.Storage.Table
 {
 	/// <summary>
-	/// Provides a set of extension methods for the <see cref="ITableEntity"/> interface.
+	/// Provides a set of extension methods for the <see cref="ITableEntity" /> interface.
 	/// </summary>
 	// ReSharper disable once InconsistentNaming
 	public static class ITableEntityEx
@@ -13,7 +13,7 @@ namespace Microsoft.WindowsAzure.Storage.Table
 		#region Methods
 
 		/// <summary>
-		/// Gets the number of bytes the <paramref name="entityProperty"/> takes in Azure Table.
+		/// Gets the number of bytes the <paramref name="entityProperty" /> takes in Azure Table.
 		/// </summary>
 		/// <param name="entityProperty">The entity property.</param>
 		/// <returns>The number of bytes.</returns>

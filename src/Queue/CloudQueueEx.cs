@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Microsoft.WindowsAzure.Storage.Queue
 {
 	/// <summary>
-	/// Provides a set of extension methods for the <see cref="CloudQueue"/> class.
+	/// Provides a set of extension methods for the <see cref="CloudQueue" /> class.
 	/// </summary>
 	public static class CloudQueueEx
 	{
@@ -22,13 +22,13 @@ namespace Microsoft.WindowsAzure.Storage.Queue
 		/// <summary>
 		/// Initiates an asynchronous operation to get all messages from the queue.
 		/// </summary>
-		/// <param name="cloudQueue">The instance of <see cref="CloudQueue"/>.</param>
-		/// <param name="cancellationToken">A <see cref="CancellationToken"/> to observe while waiting for a task to complete.</param>
+		/// <param name="cloudQueue">The instance of <see cref="CloudQueue" />.</param>
+		/// <param name="cancellationToken">A <see cref="CancellationToken" /> to observe while waiting for a task to complete.</param>
 		/// <returns>
-		/// A <see cref="Task{TResult}"/> object of type <see cref="IEnumerable{CloudQueueMessage}"/> that represents the asynchronous operation.
-		/// <see cref="Task{TResult}.Result"/> contain an enumerable collection of <see cref="CloudQueueMessage"/>.
+		/// A <see cref="Task{TResult}" /> object of type <see cref="IEnumerable{CloudQueueMessage}" /> that represents the asynchronous operation.
+		/// <see cref="Task{TResult}.Result" /> contain an enumerable collection of <see cref="CloudQueueMessage" />.
 		/// </returns>
-		/// <exception cref="ArgumentNullException"><paramref name="cloudQueue"/> is <c>null</c>.</exception>
+		/// <exception cref="ArgumentNullException"><paramref name="cloudQueue" /> is <c>null</c>.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static async Task<IList<CloudQueueMessage>> GetAllMessagesAsync(this CloudQueue cloudQueue, CancellationToken cancellationToken)
 		{
@@ -61,14 +61,14 @@ namespace Microsoft.WindowsAzure.Storage.Queue
 		/// <summary>
 		/// Initiates an asynchronous operation to get all messages from the queue.
 		/// </summary>
-		/// <param name="cloudQueue">The instance of <see cref="CloudQueue"/>.</param>
-		/// <param name="visibilityTimeout">A <see cref="TimeSpan"/> specifying the visibility timeout interval.</param>
-		/// <param name="cancellationToken">A <see cref="CancellationToken"/> to observe while waiting for a task to complete.</param>
+		/// <param name="cloudQueue">The instance of <see cref="CloudQueue" />.</param>
+		/// <param name="visibilityTimeout">A <see cref="TimeSpan" /> specifying the visibility timeout interval.</param>
+		/// <param name="cancellationToken">A <see cref="CancellationToken" /> to observe while waiting for a task to complete.</param>
 		/// <returns>
-		/// A <see cref="Task{TResult}"/> object of type <see cref="IEnumerable{CloudQueueMessage}"/> that represents the asynchronous operation.
-		/// <see cref="Task{TResult}.Result"/> contain an enumerable collection of <see cref="CloudQueueMessage"/>.
+		/// A <see cref="Task{TResult}" /> object of type <see cref="IEnumerable{CloudQueueMessage}" /> that represents the asynchronous operation.
+		/// <see cref="Task{TResult}.Result" /> contain an enumerable collection of <see cref="CloudQueueMessage" />.
 		/// </returns>
-		/// <exception cref="ArgumentNullException"><paramref name="cloudQueue"/> is <c>null</c>.</exception>
+		/// <exception cref="ArgumentNullException"><paramref name="cloudQueue" /> is <c>null</c>.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static async Task<IList<CloudQueueMessage>> GetAllMessagesAsync(this CloudQueue cloudQueue, TimeSpan? visibilityTimeout, CancellationToken cancellationToken)
 		{

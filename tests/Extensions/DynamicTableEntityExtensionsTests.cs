@@ -5,7 +5,7 @@ using Microsoft.WindowsAzure.Storage.Table;
 namespace SXN.Azure.Extensions
 {
 	/// <summary>
-	/// Provides a set of tests for <see cref="DynamicTableEntityEx"/> class.
+	/// Provides a set of tests for <see cref="DynamicTableEntityEx" /> class.
 	/// </summary>
 	[TestClass]
 	public sealed class DynamicTableEntityExtensionsTests

@@ -21,7 +21,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob
 		#region Constructors
 
 		/// <summary>
-		/// Initializes a new instance of <see cref="OperationHandle"/> class.
+		/// Initializes a new instance of <see cref="OperationHandle" /> class.
 		/// </summary>
 		/// <param name="source">A source blob.</param>
 		/// <param name="target">A destination blob.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob
 		#region Properties
 
 		/// <summary>
-		/// Gets or set a <see cref="bool"/> value which indicates whether copy operation is completed.
+		/// Gets or set a <see cref="bool" /> value which indicates whether copy operation is completed.
 		/// </summary>
 		public Boolean CopyIsCompleted
 		{
@@ -64,7 +64,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob
 		}
 
 		/// <summary>
-		/// Gets or set a <see cref="bool"/> value which indicates whether delete operation is completed.
+		/// Gets or set a <see cref="bool" /> value which indicates whether delete operation is completed.
 		/// </summary>
 		public Boolean DeleteIsCompleted
 		{
@@ -74,7 +74,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob
 		}
 
 		/// <summary>
-		/// Gets or set a <see cref="bool"/> value which indicates
+		/// Gets or set a <see cref="bool" /> value which indicates
 		/// </summary>
 		public Boolean IsCompleted
 		{
@@ -107,8 +107,8 @@ namespace Microsoft.WindowsAzure.Storage.Blob
 		/// Initiates an asynchronous operation to delete blobs which were successfully copied.
 		/// </summary>
 		/// <param name="handles">An enumeration of operations handles.</param>
-		/// <param name="cancellationToken">A <see cref="CancellationToken"/> to observe while waiting for a task to complete.</param>
-		/// <returns>A <see cref="Task"/> object that represents the current operation.</returns>
+		/// <param name="cancellationToken">A <see cref="CancellationToken" /> to observe while waiting for a task to complete.</param>
+		/// <returns>A <see cref="Task" /> object that represents the current operation.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static async Task DeleteCopiedSourceBlobsAsync(IEnumerable<OperationHandle> handles, CancellationToken cancellationToken)
 		{
@@ -194,8 +194,8 @@ namespace Microsoft.WindowsAzure.Storage.Blob
 		/// <summary>
 		/// Initiates an asynchronous operation to start the copy operation.
 		/// </summary>
-		/// <param name="cancellationToken">A <see cref="CancellationToken"/> to observe while waiting for a task to complete.</param>
-		/// <returns>A <see cref="Task"/> object that represents the current operation.</returns>
+		/// <param name="cancellationToken">A <see cref="CancellationToken" /> to observe while waiting for a task to complete.</param>
+		/// <returns>A <see cref="Task" /> object that represents the current operation.</returns>
 		public async Task StartCopyAsync(CancellationToken cancellationToken)
 		{
 			if (CopyIsCompleted)
@@ -222,8 +222,8 @@ namespace Microsoft.WindowsAzure.Storage.Blob
 		/// </summary>
 		/// <param name="handles">An enumeration of operations handles.</param>
 		/// <param name="retryLimit">A count of times to retry copy operation if failed.</param>
-		/// <param name="cancellationToken">A <see cref="CancellationToken"/> to observe while waiting for a task to complete.</param>
-		/// <returns>A <see cref="Task"/> object that represents the current operation.</returns>
+		/// <param name="cancellationToken">A <see cref="CancellationToken" /> to observe while waiting for a task to complete.</param>
+		/// <returns>A <see cref="Task" /> object that represents the current operation.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static async Task WaitCopyToCompleteAsync(IReadOnlyList<OperationHandle> handles, UInt32 retryLimit, CancellationToken cancellationToken)
 		{

@@ -4,14 +4,14 @@ using System.Collections.Generic;
 namespace Microsoft.WindowsAzure.Storage.Table
 {
 	/// <summary>
-	/// Provides a set of extension methods for <see cref="DynamicTableEntity"/> class.
+	/// Provides a set of extension methods for <see cref="DynamicTableEntity" /> class.
 	/// </summary>
 	public static class DynamicTableEntityEx
 	{
 		#region Constant and Static Fields
 
 		/// <summary>
-		/// A dictionary of <see cref="EntityProperty"/> constructors, where key is type of the object.
+		/// A dictionary of <see cref="EntityProperty" /> constructors, where key is type of the object.
 		/// </summary>
 		private static readonly IReadOnlyDictionary<Type, Func<Object, EntityProperty>> entityCtors = new Dictionary<Type, Func<Object, EntityProperty>>
 		{
@@ -70,7 +70,7 @@ namespace Microsoft.WindowsAzure.Storage.Table
 		#region Methods
 
 		/// <summary>
-		/// Adds an element with the provided key and value to the <see cref="DynamicTableEntity"/>.
+		/// Adds an element with the provided key and value to the <see cref="DynamicTableEntity" />.
 		/// </summary>
 		/// <param name="tableEntity">A target table entity.</param>
 		/// <param name="key">The object to use as the key of the element to add.</param>

@@ -4,14 +4,14 @@ using System.Runtime.CompilerServices;
 namespace Microsoft.WindowsAzure.Storage.Table
 {
 	/// <summary>
-	/// Provides a set of extension methods for the <see cref="TableOperationType"/> enumeration.
+	/// Provides a set of extension methods for the <see cref="TableOperationType" /> enumeration.
 	/// </summary>
 	internal static class TableOperationTypeEx
 	{
 		#region Methods
 
 		/// <summary>
-		/// Gets a delegate to function that creates an instance of <see cref="TableOperation"/>.
+		/// Gets a delegate to function that creates an instance of <see cref="TableOperation" />.
 		/// </summary>
 		/// <param name="operationType">A type of table operation.</param>
 		/// <returns>A delegate to create function.</returns>

@@ -9,7 +9,7 @@ using Microsoft.WindowsAzure.Storage.Blob;
 namespace SXN.Azure.Extensions
 {
 	/// <summary>
-	/// Provides a set of tests for <see cref="CloudBlobContainerEx"/> class.
+	/// Provides a set of tests for <see cref="CloudBlobContainerEx" /> class.
 	/// </summary>
 	[TestClass]
 	public sealed class CloudBlobContainerExtensionsTests
@@ -33,7 +33,7 @@ namespace SXN.Azure.Extensions
 		#region Constructor
 
 		/// <summary>
-		/// Initializes a new instance of <see cref="CloudBlobContainerExtensionsTests"/> class.
+		/// Initializes a new instance of <see cref="CloudBlobContainerExtensionsTests" /> class.
 		/// </summary>
 		public CloudBlobContainerExtensionsTests()
 		{

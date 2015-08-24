@@ -56,11 +56,9 @@
     <Compile Include="Table\DynamicTableEntityEx.cs" />
     <Compile Include="Blob\CloudBlobCopyBlobsResult.cs" />
     <Compile Include="Blob\OperationHandle.cs" />
-    <Compile Include="StringEx.cs" />
     <Compile Include="Table\TableOperationTypeEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StorageQueueMessage.cs" />
-    <Compile Include="SharedAccessSignatureTokenSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

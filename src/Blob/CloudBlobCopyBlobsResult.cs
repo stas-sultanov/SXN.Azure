@@ -12,7 +12,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob
 		#region Constructors
 
 		/// <summary>
-		/// Initializes a new instance of <see cref="CloudBlobCopyBlobsResult"/> class.
+		/// Initializes a new instance of <see cref="CloudBlobCopyBlobsResult" /> class.
 		/// </summary>
 		/// <param name="newBlobs">A list of copied new blobs.</param>
 		/// <param name="notCopiedBlobs">A list of not copied source blobs.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob
 		/// <summary>
 		/// Applies an accumulator over a sequence.
 		/// </summary>
-		/// <param name="results">An enumeration of <see cref="CloudBlobCopyBlobsResult"/> to aggregate over.</param>
+		/// <param name="results">An enumeration of <see cref="CloudBlobCopyBlobsResult" /> to aggregate over.</param>
 		/// <returns>The accumulated result.</returns>
 		public static CloudBlobCopyBlobsResult Aggregate(IEnumerable<CloudBlobCopyBlobsResult> results)
 		{

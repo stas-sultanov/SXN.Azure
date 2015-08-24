@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 namespace Microsoft.WindowsAzure.Storage
@@ -15,7 +14,6 @@ namespace Microsoft.WindowsAzure.Storage
 		/// <summary>
 		/// Gets or sets the client's unique request id.
 		/// </summary>
-		[DataMember]
 		public Guid ClientRequestId
 		{
 			get;
@@ -26,7 +24,6 @@ namespace Microsoft.WindowsAzure.Storage
 		/// <summary>
 		/// Gets or sets the execution tag.
 		/// </summary>
-		[DataMember]
 		public Guid ExecutionTag
 		{
 			get;
@@ -37,7 +34,6 @@ namespace Microsoft.WindowsAzure.Storage
 		/// <summary>
 		/// Gets or sets message.
 		/// </summary>
-		[DataMember]
 		public String Message
 		{
 			get;
@@ -48,7 +44,6 @@ namespace Microsoft.WindowsAzure.Storage
 		/// <summary>
 		/// Gets or sets Azure region.
 		/// </summary>
-		[DataMember]
 		public String Region
 		{
 			get;
@@ -59,7 +54,6 @@ namespace Microsoft.WindowsAzure.Storage
 		/// <summary>
 		/// Gets or set the name of the Azure Scheduler Job Collection.
 		/// </summary>
-		[DataMember]
 		public String SchedulerJobCollectionId
 		{
 			get;
@@ -70,7 +64,6 @@ namespace Microsoft.WindowsAzure.Storage
 		/// <summary>
 		/// Gets or set the name of the Azure Scheduler Job.
 		/// </summary>
-		[DataMember]
 		public String SchedulerJobId
 		{
 			get;
